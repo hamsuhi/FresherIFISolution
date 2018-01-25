@@ -1,0 +1,16 @@
+2018-01-25 10:12:58.211  INFO 9609 --- [main] com.demo1.spring.main.main               : Starting main on fresher with PID 9609 (/home/huong/eclipse-workspace/demo/bin started by huong in /home/huong/eclipse-workspace/demo)
+2018-01-25 10:12:58.218  INFO 9609 --- [main] com.demo1.spring.main.main               : No active profile set, falling back to default profiles: default
+2018-01-25 10:12:58.256  INFO 9609 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c729a55: startup date [Thu Jan 25 10:12:58 ICT 2018]; root of context hierarchy
+2018-01-25 10:12:58.436  INFO 9609 --- [main] com.demo1.spring.main.main               : Started main in 0.65 seconds (JVM running for 1.007)
+2018-01-25 10:12:58.437  INFO 9609 --- [main] com.demo1.config.AppConfig               : Welcome VietNam!INFO
+2018-01-25 10:12:58.437 ERROR 9609 --- [main] com.demo1.config.AppConfig               : Say Good bye VietNam!ERROR
+2018-01-25 10:12:58.437 ERROR 9609 --- [main] com.demo1.config.AppConfig               : Say Good bye VietNam!FATAL
+2018-01-25 10:12:58.445  INFO 9609 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c729a55: startup date [Thu Jan 25 10:12:58 ICT 2018]; root of context hierarchy
+2018-01-25 10:13:11.449  INFO 9680 --- [main] com.demo1.spring.main.main               : Starting main on fresher with PID 9680 (/home/huong/eclipse-workspace/demo/bin started by huong in /home/huong/eclipse-workspace/demo)
+2018-01-25 10:13:11.453  INFO 9680 --- [main] com.demo1.spring.main.main               : No active profile set, falling back to default profiles: default
+2018-01-25 10:13:11.473  INFO 9680 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@661972b0: startup date [Thu Jan 25 10:13:11 ICT 2018]; root of context hierarchy
+2018-01-25 10:13:11.646  INFO 9680 --- [main] com.demo1.spring.main.main               : Started main in 0.471 seconds (JVM running for 0.81)
+2018-01-25 10:13:11.647  INFO 9680 --- [main] com.demo1.config.AppConfig               : Welcome VietNam!INFO
+2018-01-25 10:13:11.647 ERROR 9680 --- [main] com.demo1.config.AppConfig               : Say Good bye VietNam!ERROR
+2018-01-25 10:13:11.647 ERROR 9680 --- [main] com.demo1.config.AppConfig               : Say Good bye VietNam!FATAL
+2018-01-25 10:13:11.668  INFO 9680 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@661972b0: startup date [Thu Jan 25 10:13:11 ICT 2018]; root of context hierarchy
