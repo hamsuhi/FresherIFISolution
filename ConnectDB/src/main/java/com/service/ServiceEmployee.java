@@ -43,7 +43,7 @@ public class ServiceEmployee implements IServiceEmployee {
 
 	@Override
 	public void addEmployee(Employee employee) {
-		employeeDao.addEmployee(employee);
+		employeeDao.addEmployee(employee);		
 	}
 
 	@Override

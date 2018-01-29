@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * @author Nguyễn Thanh Hương
  */
 @Entity
-@Table(name = "EMPLOYEE")
+@Table(name = "employee")
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,6 @@ public class Employee {
 	private int id;
 	@Column(name = "FULL_NAME")
 	private String fullName;
-	
 	@Column(name = "SALARY")
 	private double salary;
 
@@ -58,11 +57,6 @@ public class Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", fullName=" + fullName + ", salary=" + salary + "]";
 	}
 
 }

@@ -5,6 +5,7 @@
 package com;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,39 +31,45 @@ public class Controller implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		int id;
+		String name;
+		double salary;
+		try {
+			Scanner sc = new Scanner(System.in);
+
+			System.out.print("1. Please Enter Your ID, Name, Salary: " + "\nID is: ");
+			id = sc.nextInt();
+
+			System.out.println("Salary is ");
+			salary = sc.nextDouble();
+
+			System.out.println("Name is: ");
+			name = sc.next();
+
+			log.info("Entered from keyboard: ");
+			serviceEmp.addEmployee(new Employee(id, name, salary));
+			log.info("Begin print all employee: ");
+			printAllEmployee();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println("ERROR enter your information! ");
+		}
+
+		// find employee
+		printAllEmployee();
+		printUserById(10);
 		// Add employee
 		log.info("________Please to add a employee! :3__________");
-		Employee e = new Employee(001 , "Hương", 450);
-		serviceEmp.addEmployee(e);
-		log.info(e.toString());
-		
-//		Employee e1 = new Employee(023, "lISA", 500);
-//		serviceEmp.addEmployee(e1);
-//		log.info(e1.toString());
-//		
-//		Employee e2 = new Employee(024, "Scotte", 300);
-//		serviceEmp.addEmployee(e2);
-//		log.info(e2.toString());
-		// serviceEmp.addEmployee(new Employee("010", "Hương xinh", 450));
+		serviceEmp.addEmployee(new Employee(12, "Monalisa", 311.2));
 
 		// Update employee
-//		if (serviceEmp.checkEmployee(001)) {
-//			log.info("________Please to UPDATE a employee! :>________");
-//
-//			serviceEmp.updateEmployee(new Employee(001, "Tu tai la toi", 300));
-//		}else {
-//			log.error("Error update!");
-//		}
-		
-		// // Delete employee
-//		if(!serviceEmp.checkEmployee(342)) {
-//		log.info("________Please to DELETE a employee! ^.^_______");
-//		serviceEmp.deleteEmployee(342);
-//		} else {
-//			log.error("Error delete");
-//		}
-		
-	
+		log.info("________Please to UPDATE a employee! :>________");
+		serviceEmp.updateEmployee(new Employee(001, "Tu tai la toi", 300));
+
+		// Delete employee
+		log.info("________Please to DELETE a employee! ^.^_______");
+		serviceEmp.deleteEmployee(002);
 	}
 
 	public void printAllEmployee() {
@@ -77,10 +84,10 @@ public class Controller implements CommandLineRunner {
 		log.info("_____________Show user by ID information_____________");
 		Employee emp = serviceEmp.getEmployeeById(id);
 		if (!serviceEmp.checkEmployee(id)) {
-			log.info("Thong tin employee theo ID: " + emp.getId() + " , " + emp.getFullName() + " , " + emp.getSalary());
+			log.info(
+					"Thong tin employee theo ID: " + emp.getId() + " , " + emp.getFullName() + " , " + emp.getSalary());
 		} else {
 			log.info("Ten Employee trung ID roi. Hehe @.@");
 		}
 	}
-
 }

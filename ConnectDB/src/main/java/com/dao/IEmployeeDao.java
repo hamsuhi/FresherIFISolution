@@ -19,7 +19,7 @@ public interface IEmployeeDao {
 
 	public Employee getEmployeeById(int employeeId);
 
-	int addEmployee(Employee employee);
+	void addEmployee(Employee employee);
 
 	void updateEmployee(Employee employee);
 

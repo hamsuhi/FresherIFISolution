@@ -28,9 +28,7 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public List<Employee> getAllEmployee() {
 		String sql = "from Employee";
-		List<Employee> list = (List<Employee>)entityManager.createQuery(sql).getResultList();
-		return list;
-		//return (List<Employee>) entityManager.createQuery(sql).getResultList();
+		return (List<Employee>) entityManager.createQuery(sql).getResultList();
 	}
 
 	@Override
@@ -39,9 +37,8 @@ public class EmployeeDao implements IEmployeeDao {
 	}
 
 	@Override
-	public int addEmployee(Employee employee) {
+	public void addEmployee(Employee employee) {
 		entityManager.persist(employee);
-		return employee.getId();
 	}
 
 	@Override
