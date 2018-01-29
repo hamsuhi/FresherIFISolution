@@ -30,20 +30,39 @@ public class Controller implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// find employee
-		printAllEmployee();
-		printUserById("009");
 		// Add employee
 		log.info("________Please to add a employee! :3__________");
-		serviceEmp.addEmployee(new Employee("010", "Hương xinh", 450));
+		Employee e = new Employee(001 , "Hương", 450);
+		serviceEmp.addEmployee(e);
+		log.info(e.toString());
 		
+//		Employee e1 = new Employee(023, "lISA", 500);
+//		serviceEmp.addEmployee(e1);
+//		log.info(e1.toString());
+//		
+//		Employee e2 = new Employee(024, "Scotte", 300);
+//		serviceEmp.addEmployee(e2);
+//		log.info(e2.toString());
+		// serviceEmp.addEmployee(new Employee("010", "Hương xinh", 450));
+
 		// Update employee
-		log.info("________Please to UPDATE a employee! :>________");
-		serviceEmp.updateEmployee(new Employee("001", "Tu tai la toi", 300));
+//		if (serviceEmp.checkEmployee(001)) {
+//			log.info("________Please to UPDATE a employee! :>________");
+//
+//			serviceEmp.updateEmployee(new Employee(001, "Tu tai la toi", 300));
+//		}else {
+//			log.error("Error update!");
+//		}
 		
-		// Delete employee
-		log.info("________Please to DELETE a employee! ^.^_______");
-		serviceEmp.deleteEmployee("002");
+		// // Delete employee
+//		if(!serviceEmp.checkEmployee(342)) {
+//		log.info("________Please to DELETE a employee! ^.^_______");
+//		serviceEmp.deleteEmployee(342);
+//		} else {
+//			log.error("Error delete");
+//		}
+		
+	
 	}
 
 	public void printAllEmployee() {
@@ -54,7 +73,7 @@ public class Controller implements CommandLineRunner {
 		}
 	}
 
-	public void printUserById(String id) {
+	public void printUserById(int id) {
 		log.info("_____________Show user by ID information_____________");
 		Employee emp = serviceEmp.getEmployeeById(id);
 		if (!serviceEmp.checkEmployee(id)) {

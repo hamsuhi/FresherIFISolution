@@ -27,7 +27,7 @@ public class ServiceEmployee implements IServiceEmployee {
 	}
 
 	@Override
-	public Employee getEmployeeById(String employeeId) {
+	public Employee getEmployeeById(int employeeId) {
 		return employeeDao.getEmployeeById(employeeId);
 	}
 
@@ -37,7 +37,7 @@ public class ServiceEmployee implements IServiceEmployee {
 	}
 
 	@Override
-	public void deleteEmployee(String employeeId) {
+	public void deleteEmployee(int employeeId) {
 		employeeDao.deleteEmployee(employeeId);
 	}
 
@@ -47,7 +47,7 @@ public class ServiceEmployee implements IServiceEmployee {
 	}
 
 	@Override
-	public boolean checkEmployee(String id) {
+	public boolean checkEmployee(int id) {
 		if (employeeDao.employeeExists(id)) {
 			return false;
 		} else {

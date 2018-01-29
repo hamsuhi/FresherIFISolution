@@ -16,14 +16,14 @@ import com.entity.Employee;
 public interface IServiceEmployee {
 	List<Employee> getAllEmployee();
 
-	Employee getEmployeeById(String employeeId);
+	Employee getEmployeeById(int employeeId);
 
-	boolean checkEmployee(String id);
+	boolean checkEmployee(int id);
 	
 	void addEmployee(Employee employee);
 
 	void updateEmployee(Employee employee);
 
-	void deleteEmployee(String employeeId);
+	void deleteEmployee(int employeeId);
 
 }

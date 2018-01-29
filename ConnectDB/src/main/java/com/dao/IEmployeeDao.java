@@ -17,14 +17,14 @@ public interface IEmployeeDao {
 
 	public List<Employee> getAllEmployee();
 
-	public Employee getEmployeeById(String employeeId);
+	public Employee getEmployeeById(int employeeId);
 
-	void addEmployee(Employee employee);
+	int addEmployee(Employee employee);
 
 	void updateEmployee(Employee employee);
 
-	void deleteEmployee(String employeeId);
+	void deleteEmployee(int employeeId);
 
-	boolean employeeExists(String id);
+	boolean employeeExists(int id);
 
 }

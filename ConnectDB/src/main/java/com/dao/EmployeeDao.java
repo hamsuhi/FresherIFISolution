@@ -28,17 +28,20 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public List<Employee> getAllEmployee() {
 		String sql = "from Employee";
-		return (List<Employee>) entityManager.createQuery(sql).getResultList();
+		List<Employee> list = (List<Employee>)entityManager.createQuery(sql).getResultList();
+		return list;
+		//return (List<Employee>) entityManager.createQuery(sql).getResultList();
 	}
 
 	@Override
-	public Employee getEmployeeById(String employeeId) {
+	public Employee getEmployeeById(int employeeId) {
 		return entityManager.find(Employee.class, employeeId);
 	}
 
 	@Override
-	public void addEmployee(Employee employee) {
+	public int addEmployee(Employee employee) {
 		entityManager.persist(employee);
+		return employee.getId();
 	}
 
 	@Override
@@ -50,12 +53,12 @@ public class EmployeeDao implements IEmployeeDao {
 	}
 
 	@Override
-	public void deleteEmployee(String employeeId) {
+	public void deleteEmployee(int employeeId) {
 		entityManager.remove(getEmployeeById(employeeId));
 	}
 
 	@Override
-	public boolean employeeExists(String id) {
+	public boolean employeeExists(int id) {
 		String sql = "from Employee as e where e.id= :id";
 		int count = entityManager.createQuery(sql).setParameter("id", id).getResultList().size();
 		return count > 0 ? true : false;
