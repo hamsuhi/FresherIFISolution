@@ -7,7 +7,6 @@ package hello;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-
 /**
  * @author Nguyễn Thanh Hương
  * 
@@ -15,6 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 //This will be AUTO IMPLEMENTED by Spring into a Bean called employmentRepository
 //CRUD refers Create, Read, Update, Delete.
+
 public interface EmployeeRepository extends CrudRepository<Employee, Long>{
 	List<Employee> findByFullName(String fullname);
 }

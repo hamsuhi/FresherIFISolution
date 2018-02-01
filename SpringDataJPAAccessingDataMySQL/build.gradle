@@ -32,6 +32,7 @@ dependencies {
 
     // Use MySQL Connector-J
     compile 'mysql:mysql-connector-java'
+    runtime("com.h2database:h2")
     
     // Use CrudRepository
     compile("org.springframework.data:spring-data-jpa")

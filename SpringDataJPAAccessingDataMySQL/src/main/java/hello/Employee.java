@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Nguyễn Thanh Hương Lớp lưu trữ đối tượng Employee, ghi chú dưới dạng
@@ -11,6 +12,7 @@ import javax.persistence.Id;
  */
 
 @Entity // This tells Hibernate to make a table out of this class.(Entity JPA)
+@Table(name = "Task")
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
