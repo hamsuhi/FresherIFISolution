@@ -9,22 +9,19 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 /**
  * @author Nguyễn Thanh Hương
- * 
- *
  */
 @Entity
-@Table
 public class Course {
 	@Id
-	@GeneratedValue
-	@Column(name="id")
-	private Integer courseId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	private int id;
 
 	@Column(name = "course_name")
 	private String courseName;
@@ -33,8 +30,8 @@ public class Course {
 	private int numberHours;
 
 	@ManyToMany(mappedBy = "courses")
+//	private Set<Student> students = new HashSet<Student>();
 	private List<Student> students;
-
 	public Course() {
 	}
 
@@ -48,14 +45,12 @@ public class Course {
 		this.numberHours = numberHours;
 		this.students = students;
 	}
+	
 
-	public int getCourseId() {
-		return courseId;
+	public int getId() {
+		return id;
 	}
-
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
-	}
+	//
 
 	public String getCourseName() {
 		return courseName;
@@ -75,7 +70,20 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", numberHours=" + numberHours + "]";
+		return "Course [id=" + id + ", courseName=" + courseName + ", numberHours=" + numberHours + "]";
+	}
+
+
+//	public Set<Student> getStudents() {
+//		return students;
+//	}
+//
+//	public void setStudents(Set<Student> students) {
+//		this.students = students;
+//	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public List<Student> getStudents() {
@@ -84,10 +92,6 @@ public class Course {
 
 	public void setStudents(List<Student> students) {
 		this.students = students;
-	}
-
-	public void setCourseId(Integer courseId) {
-		this.courseId = courseId;
 	}
 
 	// public static void main(String[] args) {

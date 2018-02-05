@@ -10,28 +10,27 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  * @author Nguyễn Thanh Hương
- * 
- *
  */
 @Entity
 @Table
 public class Student {
 	@Id
-	@GeneratedValue
-	@Column(name = "id")
-	private Integer studentId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 
 	@Column(name = "address")
 	private String address;
-	
+
 	@Column(name = "student_name")
 	private String studentName;
 
@@ -39,11 +38,13 @@ public class Student {
 	private String tel;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "registration", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
-	private List<Course> courses;
+	@JoinTable(name = "registration", joinColumns=@JoinColumn(name ="student_id"), inverseJoinColumns=@JoinColumn(name ="course_id"))
+	// private Set<Course> courses;
 	// private Set<Course> courses = new HashSet<>();
+	private List<Course> courses;
 
 	public Student() {
+
 	}
 
 	public Student(String studentName, String address, String tel) {
@@ -59,12 +60,12 @@ public class Student {
 		this.courses = courses;
 	}
 
-	public int getStudentId() {
-		return studentId;
+	public int getId() {
+		return id;
 	}
 
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getStudentName() {
@@ -99,10 +100,22 @@ public class Student {
 		this.courses = courses;
 	}
 
+	public void setid(Integer id) {
+		this.id = id;
+	}
+
+	// public Set<Course> getCourses() {
+	// return courses;
+	// }
+	//
+	// public void setCourses(Set<Course> courses) {
+	// this.courses = courses;
+	// }
+
 	// @Override
 	// public String toString() {
 	// String result = String.format("Student[id=%d, name='%s',
-	// address='%s',tel='%s']%n]", studentId, studentName,
+	// address='%s',tel='%s']%n]", id, studentName,
 	// address, tel);
 	// if (courses != null) {
 	// for (Course lstCourse : courses) {

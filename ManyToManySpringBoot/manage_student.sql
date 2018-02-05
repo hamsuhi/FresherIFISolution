@@ -19,5 +19,7 @@ primary key(`id`)
 create table `registration` (
 `student_id` int(50) not null,
 `course_id` int(50) not null,
- PRIMARY KEY (`student_id`,`course_id`)
+ PRIMARY KEY (`student_id`,`course_id`),
+FOREIGN KEY (`developer_id`) REFERENCES `developer` (`id`),
+  FOREIGN KEY (`project_id`) REFERENCES `project` (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
